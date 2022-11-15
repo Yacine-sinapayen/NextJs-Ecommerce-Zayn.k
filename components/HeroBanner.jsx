@@ -1,23 +1,21 @@
 import { Link } from "@mui/material";
 import React from "react";
 
-const HeroBanner = () => {
+import { urlFor } from "../lib/client";
+
+const HeroBanner = ({ heroBanner }) => {
   return (
     <div className="hero-banner-container">
-      <div>
-        <p className="beats-solo"> SMALL TEXT</p>
-        <h3>MID TEXT</h3>
-        <img src="" alt="zaynk coiffeur" className="hero-banner-image"/>
-
-        <div>
-          <Link href="/product/ID">
-            <button type="button">BUTTON TEXT</button>
-          </Link>
-        </div>
-        <div className="desc">
-          <h5>Description</h5>
-          <p>DESCRIPTION</p>
-        </div>
+      <img
+        src={urlFor(heroBanner.image)}
+        alt="zaynk coiffeur"
+        className="hero-banner-image"
+      />
+      <div className="container-title-btn">
+        <h3>{heroBanner.bannerTitle}</h3>
+        <Link href="/product/ID">
+          <button type="button">{heroBanner.buttonText}</button>
+        </Link>
       </div>
     </div>
   );
