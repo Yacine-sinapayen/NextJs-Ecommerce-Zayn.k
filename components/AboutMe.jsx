@@ -3,7 +3,7 @@ import { urlFor } from "../lib/client";
 
 const AboutMe = ({ aboutMe }) => {
   return (
-    <div className="aboutMe-container">
+    <div className="container aboutMe-container">
       <div className="text-content">
         <h1>{aboutMe.aboutMeTitle}</h1>
         <p>{aboutMe.aboutMeDesc}</p>

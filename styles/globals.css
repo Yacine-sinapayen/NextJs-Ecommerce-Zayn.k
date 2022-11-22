@@ -38,14 +38,14 @@ p{
 
 }
 
-.main-container {
+.container {
+  height: 80vh;
   max-width: 1400px;
   margin: auto;
   width: 100%;
+  margin-bottom: 100px;
 }
-.layout {
-  padding: 10px;
-}
+
 
 .navbar-container {
   display: flex;
@@ -118,10 +118,7 @@ span.text-red {
   font-weight: 600;
 }
 .products-container {
-  min-width: 1450px;
-  max-width: 1450px;
   height: 80vh;
-  margin:auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -163,11 +160,6 @@ span.text-red {
 }
 
 .aboutMe-container {
-  min-width: 1350px;
-  max-width: 1350px;
-  height: 80vh;
-  margin: auto;
-  margin-bottom: 100px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 1fr;
@@ -192,9 +184,6 @@ span.text-red {
 }
 
 .contact-container{
-  min-width: 1350px;
-  max-width: 1350px;
-  margin: auto;
   height: 80vh;
 }
 
@@ -486,7 +475,6 @@ span.text-red {
 }
 
 .product-detail-image {
-  border-radius: 15px;
   background-color: #ebebeb;
 
   width: 400px;
@@ -503,7 +491,6 @@ span.text-red {
   margin-top: 20px;
 }
 .small-image {
-  border-radius: 8px;
   background-color: #ebebeb;
   width: 70px;
   height: 70px;
