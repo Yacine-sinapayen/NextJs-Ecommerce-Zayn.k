@@ -1,13 +1,18 @@
 import React from "react";
 
 import { client } from "../lib/client";
-import { HeroBanner, Product, AboutMe, Contact, FooterBanner } from "../components";
+import {
+  HeroBanner,
+  Product,
+  AboutMe,
+  Contact,
+  FooterBanner,
+} from "../components";
 
 const Home = ({ products, bannerData, aboutMeData, contactData }) => {
   return (
     <>
       <HeroBanner heroBanner={bannerData.length && bannerData[0]} />
-      {console.log(bannerData)}
       <div className="products-heading">
         <h1>Les cours</h1>
       </div>
@@ -17,8 +22,8 @@ const Home = ({ products, bannerData, aboutMeData, contactData }) => {
           <Product key={product._id} product={product} />
         ))}
       </div>
-      <AboutMe aboutMe={aboutMeData.length && aboutMeData[0]}/>
-      <Contact contact={contactData.length && contactData[0]}/>
+      <AboutMe aboutMe={aboutMeData.length && aboutMeData[0]} />
+      <Contact contact={contactData.length && contactData[0]} />
       <FooterBanner footerBanner={bannerData && bannerData[0]} />
     </>
   );
