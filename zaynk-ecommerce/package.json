@@ -15,7 +15,7 @@
   ],
   "dependencies": {
     "@sanity/base": "^2.35.0",
-    "@sanity/core": "^2.35.0",
+    "@sanity/core": "^0.139.3",
     "@sanity/default-layout": "^2.35.0",
     "@sanity/default-login": "^2.35.0",
     "@sanity/desk-tool": "^2.35.1",
@@ -27,7 +27,6 @@
     "react-dom": "^17.0",
     "styled-components": "^5.2.0"
   },
-  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git@github.com:Yacine-sinapayen/zaynk-ecommerce.git"
