@@ -6,7 +6,7 @@ import {
   Product,
   AboutMe,
   Contact,
-  FooterBanner,
+  // FooterBanner,
 } from "../components";
 
 const Home = ({ products, bannerData, aboutMeData, contactData }) => {
@@ -24,7 +24,7 @@ const Home = ({ products, bannerData, aboutMeData, contactData }) => {
       </div>
       <AboutMe aboutMe={aboutMeData.length && aboutMeData[0]} />
       <Contact contact={contactData.length && contactData[0]} />
-      <FooterBanner footerBanner={bannerData && bannerData[0]} />
+      {/* <FooterBanner footerBanner={bannerData && bannerData[0]} /> */}
     </>
   );
 };
