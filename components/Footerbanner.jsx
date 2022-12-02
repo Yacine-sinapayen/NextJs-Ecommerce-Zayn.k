@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Footerbanner = () => {
+const FooterBanner = () => {
   return (
     <div>Formulaire de contact</div>
   )
 }
 
-export default Footerbanner;
+export default FooterBanner;
