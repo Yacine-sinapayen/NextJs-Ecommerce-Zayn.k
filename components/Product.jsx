@@ -1,17 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 
 import { urlFor } from "../lib/client";
+const { motion } = require("framer-motion");
 
 const Product = ({ product: { image, name, slug, price, details } }) => {
+
   return (
-    <div>
+    <motion.div
+    whileHover={{ scale: 1.01, duration: 1 }}
+    >
       <Link href={`/product/${slug.current}`}>
-        <div className="product-card">
+        <div 
+        className="product-card"
+        >
           <img
             src={urlFor(image && image[0])}
-            height={330}
-            width={330}
             className="product-image"
             alt="image-du produit-zaynk"
           />
@@ -20,7 +24,7 @@ const Product = ({ product: { image, name, slug, price, details } }) => {
           <p className="product-price">{price} €</p>
         </div>
       </Link>
-    </div>
+    </motion.div>
   );
 };
 

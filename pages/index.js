@@ -1,30 +1,40 @@
 import React from "react";
+const { motion } = require("framer-motion");
 
 import { client } from "../lib/client";
-import {
-  HeroBanner,
-  Product,
-  AboutMe,
-  Contact,
-  // FooterBanner,
-} from "../components";
+import { HeroBanner, Product, AboutMe, Contact } from "../components";
 
 const Home = ({ products, bannerData, aboutMeData, contactData }) => {
   return (
     <>
       <HeroBanner heroBanner={bannerData.length && bannerData[0]} />
-      <div className="products-heading">
-        <h1>Les cours</h1>
+
+      <div className="products-container container">
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1, x: 10 }}
+          transition={{ duration: 0.5 }}
+          className="products-heading"
+        >
+          <h1>Les cours</h1>
+        </motion.div>
+
+        <div className="product-main">
+          {products?.map((product) => (
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.9 }}
+            >
+              <Product key={product._id} product={product} />
+            </motion.div>
+          ))}
+        </div>
       </div>
 
-      <div className="products-container">
-        {products?.map((product) => (
-          <Product key={product._id} product={product} />
-        ))}
-      </div>
       <AboutMe aboutMe={aboutMeData.length && aboutMeData[0]} />
+
       <Contact contact={contactData.length && contactData[0]} />
-      {/* <FooterBanner footerBanner={bannerData && bannerData[0]} /> */}
     </>
   );
 };
