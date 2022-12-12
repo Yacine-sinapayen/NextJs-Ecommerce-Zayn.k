@@ -12,7 +12,7 @@ const Home = ({ products, bannerData, aboutMeData, contactData }) => {
       <div className="products-container container">
         <motion.div
           initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1, x: 10 }}
+          whileInView={{ opacity: 1, y: -10 }}
           transition={{ duration: 0.5 }}
           className="products-heading"
         >
@@ -23,8 +23,9 @@ const Home = ({ products, bannerData, aboutMeData, contactData }) => {
           {products?.map((product) => (
             <motion.div
               initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.9 }}
+              // whileInView={{ opacity: 1, scale: 1 }}
+              whileInView={{ opacity: 1, y: -10 }}
+              transition={{ duration: 1 }}
             >
               <Product key={product._id} product={product} />
             </motion.div>
