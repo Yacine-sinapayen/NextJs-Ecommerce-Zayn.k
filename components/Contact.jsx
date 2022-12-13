@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import imgDiv1 from "../assets/contact-div-1-img.png";
 import imgDiv2 from "../assets/contact-div-2-img.png";
-import instaLogo from "../assets/insta/1.png";
+import instaLogo from "../assets/1.png";
 import FmdGoodOutlinedIcon from "@mui/icons-material/FmdGoodOutlined";
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import PhoneAndroidOutlinedIcon from "@mui/icons-material/PhoneAndroidOutlined";
