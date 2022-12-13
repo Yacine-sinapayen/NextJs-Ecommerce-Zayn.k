@@ -12,8 +12,8 @@ const Home = ({ products, bannerData, aboutMeData, contactData }) => {
       <div className="products-container container">
         <motion.div
           initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1, y: -10 }}
-          transition={{ duration: 0.5 }}
+          whileInView={{ opacity: 1, x: 10 }}
+          transition={{ duration: 0.7 }}
           className="products-heading"
         >
           <h1>Les cours</h1>
@@ -24,8 +24,8 @@ const Home = ({ products, bannerData, aboutMeData, contactData }) => {
             <motion.div
               initial={{ opacity: 0 }}
               // whileInView={{ opacity: 1, scale: 1 }}
-              whileInView={{ opacity: 1, y: -10 }}
-              transition={{ duration: 1 }}
+              whileInView={{ opacity: 1, x: 10 }}
+              transition={{ duration: 0.7 }}
             >
               <Product key={product._id} product={product} />
             </motion.div>

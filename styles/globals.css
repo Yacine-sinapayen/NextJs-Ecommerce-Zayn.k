@@ -137,7 +137,7 @@ span.text-red {
   color: #324d67;
 }
 
-.product-main{
+.product-main {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -150,13 +150,13 @@ span.text-red {
   height: auto;
   margin: 5px;
   transition: 0.4s ease-out;
-	box-shadow: 0px 7px 10px rgba(black, 0.5)
+  box-shadow: 0px 7px 10px rgba(black, 0.5);
 }
 
-.product-card:hover{
-  border-bottom : 1px solid;
+.product-card:hover {
+  border-bottom: 1px solid;
   opacity: 1;
-  box-shadow: 0px 7px 10px rgba(black, 0.5)
+  box-shadow: 0px 7px 10px rgba(black, 0.5);
 }
 .product-image {
   width: 100%;
@@ -166,7 +166,7 @@ span.text-red {
   /* filter: brightness(70%); */
   filter: grayscale(100%);
 }
-.product-image:hover{
+.product-image:hover {
   /* filter: brightness(70%); */
   filter: grayscale(0%);
 }
@@ -184,7 +184,6 @@ span.text-red {
   font-weight: 300;
   margin-top: 6px;
 }
-
 
 .aboutMe-container {
   display: grid;
@@ -212,7 +211,65 @@ span.text-red {
 
 .contact-container {
   height: 80vh;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
 }
+
+.contact-div-1 {
+  width: 31%;
+  height: 100%;
+}
+.contact-div-1-img{
+  display: flex;
+  justify-content: center;
+  height: 50%;
+  /* background: red; */
+}
+.contact-div-1-text {
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3.5rem;
+  border-bottom: 1px solid black;
+  /* background: #0a7eeb; */
+}
+
+.contact-div-2 {
+  width: 33%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.contact-div-3 {
+  width: 33%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-top: 1px solid black;
+  /* background: green; */
+}
+
+.contact-div-3-item {
+  display: flex;
+  flex-direction: row;
+  height: 20%;
+  width: 100%;
+  /* border: 1px solid black; */
+}
+.contact-div-3-item div:nth-child(1){
+  /* background: #f02d34; */
+}
+.contact-div-3-item div:nth-child(2){
+  /* background: green; */
+  width: 75%;
+  margin: 0px auto;
+}
+
 
 .hero-banner-container {
   position: relative;
@@ -276,8 +333,6 @@ span.text-red {
   font-size: 1rem;
   color: white;
 }
-
-
 
 .footer-banner-container {
   padding: 100px 40px;
