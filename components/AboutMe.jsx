@@ -7,8 +7,8 @@ const AboutMe = ({ aboutMe }) => {
   return (
     <motion.div
       initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1, y: -10 }}
-      transition={{ duration: 1.5 }}
+      whileInView={{ opacity: 1, x: 10 }}
+      transition={{ duration: 0.7 }}
     >
       <div className="container aboutMe-container">
         <div className="text-content">
