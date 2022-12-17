@@ -1,18 +1,17 @@
-import React, { useState } from "react";
+import React, { forwardRef } from "react";
 import Link from "next/link";
 
 import { urlFor } from "../lib/client";
 const { motion } = require("framer-motion");
 
-const Product = ({ product: { image, name, slug, price, details } }) => {
+const Product = ({ product: { image, name, slug, price, details }}) => {
 
   return (
-    <motion.div
-    whileHover={{ scale: 1.01, duration: 1 }}
-    >
+    <motion.div whileHover={{ scale: 1.01, duration: 1 }}>
       <Link href={`/product/${slug.current}`}>
-        <div 
-        className="product-card"
+        <div
+          className="product-card"
+          id="product-card"
         >
           <img
             src={urlFor(image && image[0])}

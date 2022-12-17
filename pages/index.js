@@ -1,15 +1,21 @@
-import React from "react";
+import React, {createRef, forwardRef, useRef} from "react";
 const { motion } = require("framer-motion");
 
 import { client } from "../lib/client";
 import { HeroBanner, Product, AboutMe, Contact } from "../components";
 
 const Home = ({ products, bannerData, aboutMeData, contactData }) => {
+
+  const scrollDiv = createRef();
+  const scrollSmoothHandler = () => {
+    scrollDiv.current.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <>
-      <HeroBanner heroBanner={bannerData.length && bannerData[0]} />
+      <HeroBanner heroBanner={bannerData.length && bannerData[0]} toScroll={scrollSmoothHandler}/>
 
-      <div className="products-container container">
+      <div className="products-container container" ref={scrollDiv}>
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1, x: 10 }}
@@ -23,7 +29,6 @@ const Home = ({ products, bannerData, aboutMeData, contactData }) => {
           {products?.map((product) => (
             <motion.div
               initial={{ opacity: 0 }}
-              // whileInView={{ opacity: 1, scale: 1 }}
               whileInView={{ opacity: 1, x: 10 }}
               transition={{ duration: 0.7 }}
             >

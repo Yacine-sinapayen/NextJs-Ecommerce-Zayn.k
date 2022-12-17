@@ -69,6 +69,9 @@ const Contact = ({ contact }) => {
           </div>
         </div>
       </div>
+      <div className='footer-container'>
+        <p>2022 Zayn.k tous droits réservés</p>
+    </div>
     </motion.div>
   );
 };

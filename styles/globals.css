@@ -164,7 +164,7 @@ span.text-red {
   background-color: #ebebeb;
   transition-duration: 0.5s;
   /* filter: brightness(70%); */
-  filter: grayscale(100%);
+  filter: grayscale(80%);
 }
 .product-image:hover {
   /* filter: brightness(70%); */
@@ -410,15 +410,14 @@ span.text-red {
 
 .footer-container {
   color: #324d67;
-  text-align: center;
   margin-top: 20px;
-  padding: 30px 10px;
   font-weight: 700;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 10px;
   justify-content: center;
+  text-align: center;
+  align-items: center;
 }
 .footer-container .icons {
   font-size: 30px;
