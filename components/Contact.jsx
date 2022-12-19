@@ -15,7 +15,7 @@ const Contact = ({ contact }) => {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1, x: 10 }}
       transition={{ duration: 0.7 }}
-      className="contact-container container"
+      className="container contact-container "
     >
       <div className="contact-div-1">
         <div className="contact-div-1-img">
@@ -31,8 +31,7 @@ const Contact = ({ contact }) => {
       <div className="contact-div-3">
         <div className="contact-div-3-item">
           <div>
-            {" "}
-            <FmdGoodOutlinedIcon />{" "}
+            <FmdGoodOutlinedIcon />
           </div>
           <div>
             <h3>Adresse</h3>
@@ -41,8 +40,7 @@ const Contact = ({ contact }) => {
         </div>
         <div className="contact-div-3-item">
           <div>
-            {" "}
-            <EmailOutlinedIcon />{" "}
+            <EmailOutlinedIcon />
           </div>
           <div>
             <h3>Email</h3>
@@ -51,8 +49,7 @@ const Contact = ({ contact }) => {
         </div>
         <div className="contact-div-3-item">
           <div>
-            {" "}
-            <PhoneAndroidOutlinedIcon />{" "}
+            <PhoneAndroidOutlinedIcon />
           </div>
           <div>
             <h3>Tél</h3>
@@ -61,8 +58,8 @@ const Contact = ({ contact }) => {
         </div>
         <div className="contact-div-3-item">
           <div>
-            {" "}
-            <Image width="20px" height="20px" src={instaLogo} />{" "}
+            
+            <Image width="20px" height="20px" src={instaLogo} />
           </div>
           <div>
             <p>@kamalsafar_</p>
@@ -71,7 +68,7 @@ const Contact = ({ contact }) => {
       </div>
       <div className='footer-container'>
         <p>2022 Zayn.k tous droits réservés</p>
-    </div>
+      </div>
     </motion.div>
   );
 };

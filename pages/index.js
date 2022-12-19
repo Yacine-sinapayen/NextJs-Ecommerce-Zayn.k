@@ -1,10 +1,10 @@
-import React, {createRef, forwardRef, useRef} from "react";
+import React, {createRef} from "react";
 const { motion } = require("framer-motion");
 
 import { client } from "../lib/client";
-import { HeroBanner, Product, AboutMe, Contact } from "../components";
+import { HeroBanner, ProductsContainer, Product, AboutMe, Contact } from "../components";
 
-const Home = ({ products, bannerData, aboutMeData, contactData }) => {
+const Home = ({ productsData, bannerData, aboutMeData, contactData }) => {
 
   const scrollDiv = createRef();
   const scrollSmoothHandler = () => {
@@ -15,28 +15,7 @@ const Home = ({ products, bannerData, aboutMeData, contactData }) => {
     <>
       <HeroBanner heroBanner={bannerData.length && bannerData[0]} toScroll={scrollSmoothHandler}/>
 
-      <div className="products-container container" ref={scrollDiv}>
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1, x: 10 }}
-          transition={{ duration: 0.7 }}
-          className="products-heading"
-        >
-          <h1>Les cours</h1>
-        </motion.div>
-
-        <div className="product-main">
-          {products?.map((product) => (
-            <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1, x: 10 }}
-              transition={{ duration: 0.7 }}
-            >
-              <Product key={product._id} product={product} />
-            </motion.div>
-          ))}
-        </div>
-      </div>
+      <ProductsContainer productsData={productsData} scrollDiv={scrollDiv}/>
 
       <AboutMe aboutMe={aboutMeData.length && aboutMeData[0]} />
 
@@ -49,8 +28,9 @@ export const getServerSideProps = async () => {
   const bannerQuery = '*[_type == "banner"]';
   const bannerData = await client.fetch(bannerQuery);
 
-  const query = '*[_type == "product"]';
-  const products = await client.fetch(query);
+  const productsQuery = '*[_type == "product"]';
+  const productsData = await client.fetch(productsQuery);
+  console.log(productsData);
 
   const aboutMeQuery = '*[_type == "aboutMe"]';
   const aboutMeData = await client.fetch(aboutMeQuery);
@@ -59,7 +39,7 @@ export const getServerSideProps = async () => {
   const contactData = await client.fetch(contactQuery);
 
   return {
-    props: { products, bannerData, aboutMeData, contactData },
+    props: { productsData, bannerData, aboutMeData, contactData },
   };
 };
 
