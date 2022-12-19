@@ -170,6 +170,7 @@ span.text-red {
 .products-container {
   display: flex;
   flex-direction: column;
+  background: red;
 }
 
 .products-heading {
@@ -199,7 +200,6 @@ span.text-red {
   box-shadow: 0px 7px 10px rgba(black, 0.5);
 }
 .product-image {
-  width: 100%;
   height: 300px;
   background-color: #ebebeb;
   transition-duration: 0.5s;
