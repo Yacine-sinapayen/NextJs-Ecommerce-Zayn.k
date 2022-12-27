@@ -5,6 +5,7 @@ html,
 html {
   --font-logo: "Gilda Display", serif;
   --font-body: "Roboto Mono", monospace;
+  --color-primary: #4b4b4b;
 }
 
 body, html,
@@ -12,6 +13,7 @@ body, html,
   padding: 0;
   margin: 0;
   font-family: var(--font-body);
+  color: var(--color-primary);
   font-weight: 300;
   box-sizing: border-box;
 }
@@ -25,9 +27,8 @@ a {
 }
 
 h1 {
-  font-weight: 400;
+  font-weight: 300;
   font-size: 3rem;
-  color: #4b4b4b;
 }
 
 p {
@@ -202,7 +203,7 @@ span.text-red {
 .product-main {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 
 .product-card {
@@ -217,6 +218,7 @@ span.text-red {
 .product-image {
   height: 300px;
   width: 300px;
+  object-fit: cover;
   background-color: #ebebeb;
   transition-duration: 0.5s;
   /* filter: brightness(70%); */
@@ -279,8 +281,8 @@ span.text-red {
 
 .contact-container {
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
+  justify-content: space-around;
   gap: 15px;
 }
 
@@ -288,18 +290,10 @@ span.text-red {
   width: 31%;
   height: 100%;
 }
-.contact-div-1-img {
-  display: flex;
-  height: 50%;
-  /* background: red; */
-}
+
 .contact-div-1-text {
-  height: 50%;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 3.5rem;
-  border-bottom: 1px solid black;
+  margin-bottom: 40px;
   /* background: #0a7eeb; */
 }
 
@@ -310,20 +304,8 @@ span.text-red {
   justify-content: center;
 }
 
-.contact-div-3 {
-  width: 33%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border-top: 1px solid black;
-  gap: 20px;
-  padding-top: 20px;
-  /* background: green; */
-}
-
 .contact-div-3-item {
+  margin-bottom: 30px;
   display: flex;
   flex-direction: row;
   height: 20%;
@@ -743,7 +725,20 @@ span.text-red {
   margin-top: 10px;
 }
 
+
+
 @media screen and (max-width: 800px) {
+
+main{
+  width: 120%;
+}
+.hero-banner-image{
+  width: 100%;
+}
+
+.product-main{
+  justify-content: center;
+}
   .footer-banner-container {
     height: 560px;
     margin-top: 80px;

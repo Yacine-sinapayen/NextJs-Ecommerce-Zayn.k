@@ -13,7 +13,7 @@ const Layout = ({ children }) => {
         <Navbar />
       </header>
 
-      <main style={{ background:'red'}}>
+      <main>
         {children}
       </main>
     </>
