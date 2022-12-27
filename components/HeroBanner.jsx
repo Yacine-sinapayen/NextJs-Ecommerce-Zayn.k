@@ -19,9 +19,6 @@ const HeroBanner = ({ heroBanner, toScroll }) => {
         src={urlFor(heroBanner.image)}
         alt="zaynk coiffeur"
         className="hero-banner-image"
-        style={{
-          width: browserWidth < 800 && '800px',
-        }}
       />
     </motion.div>
   );
