@@ -4,7 +4,7 @@ import Navbar from "./Navbar";
 
 const Layout = ({ children }) => {
   return (
-    <div className="layout">
+    <>
       <Head>
         <title>Zayn.k Formation</title>
       </Head>
@@ -13,10 +13,10 @@ const Layout = ({ children }) => {
         <Navbar />
       </header>
 
-      <main>
+      <main style={{ background:'red'}}>
         {children}
       </main>
-    </div>
+    </>
   );
 };
 

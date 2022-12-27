@@ -58,7 +58,6 @@ const Contact = ({ contact }) => {
         </div>
         <div className="contact-div-3-item">
           <div>
-            
             <Image width="20px" height="20px" src={instaLogo} />
           </div>
           <div>
