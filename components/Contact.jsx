@@ -7,10 +7,8 @@ import FmdGoodOutlinedIcon from "@mui/icons-material/FmdGoodOutlined";
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import PhoneAndroidOutlinedIcon from "@mui/icons-material/PhoneAndroidOutlined";
 const { motion } = require("framer-motion");
-import useDimension from "../hook/useDimension";
 
 const Contact = ({ contact }) => {
-  const browserWidth = useDimension;
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -58,13 +56,6 @@ const Contact = ({ contact }) => {
           </div>
         </div>
       </div>
-
-      {/* <div className="contact-div-2">
-        <Image
-          src={imgDiv2}
-          style={{ objectFit: "cover", width: "300px", height: "300px" }}
-        />
-      </div> */}
 
       <div className="footer-container">
         <p>2022 Zayn.k tous droits réservés</p>

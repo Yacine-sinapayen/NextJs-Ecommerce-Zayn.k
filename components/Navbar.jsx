@@ -1,17 +1,19 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import { useRouter } from 'next/router'
 import { AiOutlineShopping } from "react-icons/ai";
 
 import { Cart } from "./";
 import { useStateContext } from "../context/StateContext";
 import Image from "next/image";
 import instaLogo from "../assets/1.png";
-const { motion, AnimatePresence } = require("framer-motion");
+const { motion } = require("framer-motion");
 
 const Navbar = ({ isVisible }) => {
   const { showCart, setShowCart, totalQuantities } = useStateContext();
-
+  const router = useRouter()
   const [activeNavbar, setActiveNavbar] = useState(false);
+  const location = router.pathname === '/';
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -30,6 +32,7 @@ const Navbar = ({ isVisible }) => {
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.4 }}
         className={activeNavbar ? "header background-white-active" : "header"}
+        style={{background: !location && 'white'}}
       >
         <div className="navbar-content">
           {/* RÉSEAUX */}
@@ -38,23 +41,31 @@ const Navbar = ({ isVisible }) => {
           </div>
 
           {/* LOGO */}
-          <div className="navBar-logo">
-            <div className="navBar-logo-content">
-              <h1 className={activeNavbar && "color-black-active"}>ZAYN.K</h1>
-              <div className="navBar-logo-subtitile">
-                <span
-                  className={
-                    activeNavbar
-                      ? "background-black-active navBar-logo-line"
-                      : "navBar-logo-line"
-                  }
-                ></span>
-                <h2 className={activeNavbar && "color-black-active"}>
-                  Formation
-                </h2>
+          <Link href={`/`}>
+            <div className="navBar-logo">
+              <div className="navBar-logo-content">
+                <h1 
+                className={activeNavbar && "color-black-active"}
+                style={{color: !location && '#4b4b4b'}}
+                >ZAYN.K</h1>
+                <div className="navBar-logo-subtitile">
+                  <span
+                    className={
+                      activeNavbar
+                        ? "background-black-active navBar-logo-line"
+                        : "navBar-logo-line"
+                    }
+                    style={{background: !location && '#4b4b4b'}}
+                  ></span>
+                  <h2 
+                  className={activeNavbar && "color-black-active"}
+                  style={{color: !location && '#4b4b4b'}}>
+                    Formation
+                  </h2>
+                </div>
               </div>
             </div>
-          </div>
+          </Link>
 
           {/* PANIER */}
           <button className="cart-icon" onClick={() => setShowCart(true)}>
