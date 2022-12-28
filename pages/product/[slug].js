@@ -9,6 +9,7 @@ import { client, urlFor } from "../../lib/client";
 import { Product } from '../../components';
 import { useStateContext } from '../../context/StateContext'; 
 
+
 const ProductDetails = ({ product, products }) => {
   const { image, name, details, price } = product;
   const [index, setIndex] = useState(0);
@@ -19,10 +20,10 @@ const ProductDetails = ({ product, products }) => {
     setShowCart(true);
   }
   return (
-    <div>
+    <>
       <div className="product-detail-container">
         <div>
-          <div className="image-container">
+          <div className="product-detail-container-image">
             <img
               src={urlFor(image && image[index])}
               className="product-detail-image"
@@ -44,16 +45,6 @@ const ProductDetails = ({ product, products }) => {
 
         <div className="product-detail-desc">
           <h1>{name}</h1>
-          <div className="reviews">
-            <div>
-              <AiFillStar />
-              <AiFillStar />
-              <AiFillStar />
-              <AiFillStar />
-              <AiOutlineStar />
-            </div>
-            <p>(20)</p>
-          </div>
           <h4>Détails : </h4>
           <p>{details}</p>
           <p className="price">{price}€</p>
@@ -83,18 +74,16 @@ const ProductDetails = ({ product, products }) => {
           </div>
         </div>
       </div>
-
-      <div className="maylike-products-wrapper">
-        <h2>Vous pouvez également aimer</h2>
-        <div className="marquee">
-          <div className="maylike-products-container track">
+        <div className="maylike-products-wrapper">
+          <h2>Vous pouvez également aimer</h2>
+          <div className="maylike-products-container">
             {products.map((item) => (
               <Product key={item._id} product={item}/>
             ))}
           </div>
         </div>
-      </div>
-    </div>
+
+    </>
   );
 };
 

@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Gilda+Display&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;300;400;500&display=swap");
-html,
-html,
+
 html {
   --font-logo: "Gilda Display", serif;
   --font-body: "Roboto Mono", monospace;
@@ -46,8 +45,8 @@ p {
 
 /* HEADER -------------------------- */
 .header {
-  /* background: #f02d34; */
   position: fixed;
+  top: 0;
   width: 100%;
   z-index: 1;
   padding: 10px 0px;
@@ -62,12 +61,13 @@ p {
   /* background: #324d67; */
   display: flex;
   justify-content: space-between;
-  max-width: 88%;
+  max-width: 90%;
   margin: auto;
 }
 .navBar-logo {
   /* background: green; */
   width: 33%;
+  cursor: pointer;
 }
 
 .navBar-logo-content {
@@ -121,29 +121,8 @@ p {
 
 /* ------------------------- */
 
-.marquee-text {
-  font-size: 29px;
-  font-weight: 600;
-  margin: 60px 0px;
-  color: #f02d34;
-}
-.marquee {
-  position: relative;
-  height: 400px;
-  width: 100%;
-  overflow-x: hidden;
-}
 
-.track {
-  position: absolute;
-  white-space: nowrap;
-  will-change: transform;
-  animation: marquee 15s linear infinite;
-  width: 180%;
-}
-.track:hover {
-  animation-play-state: paused;
-}
+
 @keyframes marquee {
   from {
     transform: translateX(0);
@@ -180,7 +159,7 @@ span.text-red {
   right: -8px;
   font-size: 12px;
   color: #eee;
-  background-color: #f02d34;
+  background-color: var(--color-primary);
   width: 18px;
   height: 18px;
   border-radius: 50%;
@@ -320,6 +299,18 @@ span.text-red {
 }
 
 /* BANNER ------------------ */
+.hero-banner-container{
+  position: relative;
+}
+
+.hero-banner-btn{
+  position: absolute;
+  top: 70%;
+  left: 25%;
+  right: 25%;
+  width: 200px;
+  margin: auto;
+}
 .hero-banner-image{
   height:100vh;
   width: 100vw;
@@ -434,7 +425,7 @@ span.text-red {
 }
 .cart-num-items {
   margin-left: 10px;
-  color: #f02d34;
+  color: var(--color-primary);
 }
 .empty-cart {
   margin: 40px;
@@ -461,8 +452,7 @@ span.text-red {
 .product .cart-product-image {
   width: 180px;
   height: 150px;
-  border-radius: 15px;
-  background-color: #ebebeb;
+  object-fit: cover;
 }
 .item-desc .flex {
   display: flex;
@@ -502,42 +492,49 @@ span.text-red {
 }
 
 .btn-container {
-  width: 400px;
+  width: 200px;
   margin: auto;
 }
+
 .btn {
   width: 100%;
   max-width: 400px;
   padding: 10px 12px;
-  border-radius: 15px;
   border: none;
-  font-size: 20px;
+  font-size: 15px;
   margin-top: 10px;
   margin-top: 40px;
   text-transform: uppercase;
-  background-color: #f02d34;
+  background-color: var(--color-primary);
   color: #fff;
   cursor: pointer;
-  transform: scale(1, 1);
-  transition: transform 0.5s ease;
 }
 .btn:hover {
-  transform: scale(1.1, 1.1);
+  transform: scale(1, 1);
 }
+
+/* SLUG ------------------ */
 .product-detail-container {
   display: flex;
+  flex-direction: row;
   gap: 40px;
-  margin: 40px;
-  margin-top: 60px;
-  color: #324d67;
+  margin: 80px 40px;
+}
+
+.product-detail-desc{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.product-detail-container-image{
+  padding-top: 15px;
 }
 
 .product-detail-image {
-  background-color: #ebebeb;
-  /* width: 400px; */
+  width: 400px;
   height: 400px;
-  cursor: pointer;
-  transition: 0.3s ease-in-out;
+  object-fit: cover;
 }
 .product-detail-image:hover {
   background-color: #f02d34;
@@ -557,13 +554,7 @@ span.text-red {
 .selected-image {
   background-color: #f02d34;
 }
-.reviews {
-  color: #f02d34;
-  margin-top: 10px;
-  display: flex;
-  gap: 5px;
-  align-items: center;
-}
+
 
 .product-detail-desc h4 {
   margin-top: 10px;
@@ -579,7 +570,6 @@ span.text-red {
   font-weight: 700;
   font-size: 26px;
   margin-top: 30px;
-  color: #f02d34;
 }
 .price .old-price,
 .product-price .old-price,
@@ -599,12 +589,12 @@ span.text-red {
 }
 .buttons .add-to-cart {
   padding: 10px 20px;
-  border: 1px solid #f02d34;
+  border: 1px solid var(--color-primary);
   margin-top: 40px;
   font-size: 18px;
   font-weight: 500;
   background-color: white;
-  color: #f02d34;
+  color: var(--color-primary);
   cursor: pointer;
   width: 200px;
   transform: scale(1, 1);
@@ -615,9 +605,8 @@ span.text-red {
 }
 .buttons .buy-now {
   width: 200px;
-
   padding: 10px 20px;
-  background-color: #f02d34;
+  background-color: var(--color-primary);
   color: white;
   border: none;
   margin-top: 40px;
@@ -651,9 +640,6 @@ span.text-red {
   color: rgb(49, 168, 49);
 }
 
-.maylike-products-wrapper {
-  margin-top: 120px;
-}
 .maylike-products-wrapper h2 {
   text-align: center;
   margin: 50px;
@@ -661,12 +647,7 @@ span.text-red {
 
   font-size: 28px;
 }
-.maylike-products-container {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  margin-top: 20px;
-}
+
 .max-qty {
   font-weight: 500;
   color: #f02d34;
@@ -725,20 +706,37 @@ span.text-red {
   margin-top: 10px;
 }
 
+.maylike-products-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 15px;
+  margin-top: 20px;
+}
 
 
 @media screen and (max-width: 800px) {
 
-main{
-  width: 120%;
-}
-.hero-banner-image{
-  width: 100%;
-}
+  main{
+    width: 120%;
+  }
+  .hero-banner-image{
+    width: 100%;
+  }
 
-.product-main{
-  justify-content: center;
-}
+  /* SLUG RESPONSIVE */
+  .products-heading{
+    display: flex;
+    justify-content: center;
+  }
+  .product-main{
+    justify-content: center;
+  }
+  .maylike-products-wrapper{
+    margin-bottom: 300px;
+  }
+
+  /* FOOTER RESPONSIVE */
   .footer-banner-container {
     height: 560px;
     margin-top: 80px;
@@ -764,15 +762,28 @@ main{
     height: 350px;
   }
 
+  /* ABOUT ME RESPONSIVE ------------ */
   .aboutMe-container {
+    width: 90%;
+    margin: auto;
     flex-direction: column;
     gap: 30px;
+    margin-bottom: 100px;
   }
-  .aboutMe-container .text-content {
-    width: 100%;
+
+  .aboutMe-container .text-content{
+    width: 90%;
+  }
+  .aboutMe-container .text-content-title{
+    text-align: center;
   }
   .aboutMe-container .aboutMe-img {
-    width: 100%;
+    width: 95%;
+  }
+
+  /* CONTACT RESPONSIVE -------- */
+  .contact-container{
+    height: 80vh;
   }
   .cart-container {
     width: 415px;
@@ -825,10 +836,6 @@ main{
 
   .total h3 {
     font-size: 20px;
-  }
-  .track {
-    animation: marquee 10s linear infinite;
-    width: 550%;
   }
   .success-wrapper,
   .cancel-wrapper {
