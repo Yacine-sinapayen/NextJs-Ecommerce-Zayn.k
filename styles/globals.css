@@ -221,9 +221,7 @@ span.text-red {
 }
 
 .product-card:hover {
-  border-bottom: 1px solid;
-  opacity: 1;
-  box-shadow: 0px 7px 10px rgba(black, 0.5);
+  border-bottom: 1px solid rgba(75, 75, 75, 0.3);
 }
 
 .product-name {
@@ -270,44 +268,29 @@ span.text-red {
   height: 400px;
 }
 
-.contact-container {
-  display: flex;
+/* CONTACT ---------- */
+.contact-infos-container{
+  border-top: 1px solid rgba(75, 75, 75, 0.3);
+  padding-top: 35px;
+}
+
+.contact-infos-items{
+  display:flex;
   flex-wrap: wrap;
-  justify-content: space-around;
-  gap: 15px;
+  justify-content: space-between;
+  /* background: red; */
 }
 
-.contact-div-1 .contact-div-2 .contact-div-3 {
-  width: 31%;
-  height: 100%;
-}
-
-.contact-div-1-text {
+.contact-item {
   display: flex;
-  margin-bottom: 40px;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 30px;
   /* background: #0a7eeb; */
 }
 
-.contact-div-2 {
-  width: 33%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-}
-
-.contact-div-3-item {
-  margin-bottom: 30px;
-  display: flex;
-  flex-direction: row;
-  height: 20%;
-  width: 100%;
-  /* border: 1px solid black; */
-}
-
-.contact-div-3-item div:nth-child(2) {
-  /* background: green; */
-  width: 75%;
-  margin: 0px auto;
+.contact-law{
+  text-align: center;
 }
 
 /* BANNER ------------------ */
@@ -329,18 +312,6 @@ span.text-red {
   object-fit: cover;
 } 
 
-/*FOOTER ------------------------- */
-.footer-banner-container {
-  padding: 100px 40px;
-  background-color: #f02d34;
-  border-radius: 15px;
-  position: relative;
-  height: 400px;
-  line-height: 1;
-  color: white;
-  width: 100%;
-  margin-top: 120px;
-}
 .banner-desc {
   display: flex;
   justify-content: space-between;
@@ -364,13 +335,7 @@ span.text-red {
 .banner-desc .left p {
   margin: 18px;
 }
-.footer-banner-image {
-  position: absolute;
-  /* top: -35%;
-  left: 8%; */
-  top: -25%;
-  left: 25%;
-}
+
 .banner-desc .right {
   line-height: 1.4;
 }
@@ -404,22 +369,6 @@ span.text-red {
   position: relative;
 }
 
-.footer-container {
-  color: #324d67;
-  margin-top: 20px;
-  font-weight: 700;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  align-items: center;
-}
-.footer-container .icons {
-  font-size: 30px;
-  display: flex;
-  gap: 10px;
-}
 .cart-heading {
   display: flex;
   align-items: center;
@@ -748,17 +697,6 @@ span.text-red {
     margin-bottom: 300px;
   }
 
-  /* FOOTER RESPONSIVE */
-  .footer-banner-container {
-    height: 560px;
-    margin-top: 80px;
-  }
-  .footer-banner-image {
-    width: 77%;
-    left: 30%;
-    top: 6%;
-    height: 56%;
-  }
   .hero-banner-container button {
     margin-top: 90px;
     z-index: 10000;
@@ -868,5 +806,14 @@ span.text-red {
   .btn-container {
     width: 300px;
     margin: auto;
+  }
+}
+
+@media screen and (max-width: 700px){
+  .contact-infos-items{
+    flex-direction: column;
+  }
+  .contact-item{
+    justify-content: center;
   }
 }

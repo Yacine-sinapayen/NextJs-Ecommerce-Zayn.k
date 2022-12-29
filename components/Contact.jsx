@@ -14,39 +14,35 @@ const Contact = ({ contact }) => {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1, x: 10 }}
       transition={{ duration: 0.7 }}
-      className="container contact-container "
+      className="container"
     >
-      <div className="contact-div-1">
-        <h1 className="contact-div-1-text"> Contact </h1>
-        <div className="items">
-          <div className="contact-div-3-item">
+      <div className="contact-infos-container">
+        <div className="contact-infos-items">
+          <div className="contact-item">
             <div>
               <FmdGoodOutlinedIcon />
             </div>
             <div>
-              <h3>Adresse</h3>
               <p>{contact.contactAdress}</p>
             </div>
           </div>
-          <div className="contact-div-3-item">
+          <div className="contact-item">
             <div>
               <EmailOutlinedIcon />
             </div>
             <div>
-              <h3>Email</h3>
               <p>{contact.contactMail}</p>
             </div>
           </div>
-          <div className="contact-div-3-item">
+          <div className="contact-item">
             <div>
               <PhoneAndroidOutlinedIcon />
             </div>
             <div>
-              <h3>Tél</h3>
               <p>{contact.contactNumber}</p>
             </div>
           </div>
-          <div className="contact-div-3-item">
+          <div className="contact-item">
             <div>
               <Image width="20px" height="20px" src={instaLogo} />
             </div>
@@ -57,7 +53,7 @@ const Contact = ({ contact }) => {
         </div>
       </div>
 
-      <div className="footer-container">
+      <div className="contact-law">
         <p>2022 Zayn.k tous droits réservés</p>
       </div>
     </motion.div>
