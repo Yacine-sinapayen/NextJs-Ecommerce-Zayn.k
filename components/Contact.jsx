@@ -1,10 +1,9 @@
 import React from "react";
 import Image from "next/image";
-import imgDiv1 from "../assets/contact-div-1-img.png";
-import imgDiv2 from "../assets/contact-div-2-img.png";
-import instaLogo from "../assets/1.png";
+import instaLogo from "../assets/insta.png";
 import FmdGoodOutlinedIcon from "@mui/icons-material/FmdGoodOutlined";
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
+import InstagramIcon from '@mui/icons-material/Instagram';
 import PhoneAndroidOutlinedIcon from "@mui/icons-material/PhoneAndroidOutlined";
 const { motion } = require("framer-motion");
 
@@ -51,7 +50,8 @@ const Contact = ({ contact }) => {
           {/* Network */}
           <div className="contact-item">
             <div>
-              <Image width="20px" height="20px" src={instaLogo} />
+            <InstagramIcon />
+              {/* <Image width="20px" height="20px" src={instaLogo} /> */}
             </div>
             <div>
               <p>@kamalsafar_</p>
