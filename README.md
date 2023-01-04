@@ -43,4 +43,19 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 "sanity docs" to open documentation on browser
 
-"sanity help" ro explore the CLI manual
+"sanity help" ro explore the CLI 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
