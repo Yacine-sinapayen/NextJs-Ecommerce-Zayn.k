@@ -7,6 +7,7 @@ import { Cart } from "./";
 import { useStateContext } from "../context/StateContext";
 import Image from "next/image";
 import instaLogo from "../assets/1.png";
+import zaynkLogo from "../assets/Logo-transparent.png";
 const { motion } = require("framer-motion");
 
 const Navbar = ({ isVisible }) => {
@@ -62,11 +63,14 @@ const Navbar = ({ isVisible }) => {
                   <h2 
                   className={activeNavbar && "color-black-active"}
                   style={{color: !location && '#4b4b4b'}}>
-                    Formation
+                    COIFFURE MASCULINE
                   </h2>
                 </div>
               </div>
             </div>
+            {/* <div>
+              <Image width="150px" height="150px" src={zaynkLogo} />
+            </div> */}
           </Link>
 
           {/* PANIER */}

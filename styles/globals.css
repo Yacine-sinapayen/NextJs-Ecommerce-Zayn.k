@@ -87,33 +87,34 @@ p {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  width: 150px;
+  width: 90%;
   margin: auto;
 }
 .navBar-logo-content h1 {
   font-family: var(--font-logo) !important;
-  letter-spacing: 16px;
+  letter-spacing: 20px;
   font-weight: 200;
-  font-size: 1rem;
+  font-size: 1.4rem;
   color: white;
 }
 
 .navBar-logo-subtitile {
   display: flex;
   flex-direction: row;
-  gap: 10px;
+  gap: 5px;
   align-items: center;
 }
 
 .navBar-logo-subtitile span {
-  width: 60px;
+  width: 50px;
   height: 1px;
   background: white;
 }
 
 .navBar-logo-subtitile h2 {
+  letter-spacing: 2px;
   font-weight: 100;
-  font-size: 0.8rem;
+  font-size: 0.6rem;
   color: white;
 }
 
@@ -179,7 +180,7 @@ span.text-red {
   font-weight: 600;
 }
 
-/* Product page homepage */
+/* PRODUCTS HOMEPAGE ---------- */
 .products-container {
   display: flex;
   flex-direction: column;
@@ -206,6 +207,7 @@ span.text-red {
   transition: 0.4s ease-out;
   box-shadow: 0px 7px 10px rgba(black, 0.5);
 }
+
 .product-image {
   height: 300px;
   width: 300px;
@@ -238,6 +240,7 @@ span.text-red {
   font-weight: 300;
   margin-top: 6px;
 }
+/* ABOUT ME---------- */
 
 .aboutMe-container {
   display: flex;
@@ -474,15 +477,17 @@ span.text-red {
   transform: scale(1, 1);
 }
 
-/* SLUG ------------------ */
+/* PRODUCTS SLUG ---------- */
 .product-detail-container {
+  /* background: red; */
   display: flex;
   flex-direction: row;
   gap: 40px;
-  margin: 80px 40px;
+  margin-top: 80px;
 }
 
 .product-detail-desc{
+  /* background: rgb(49, 168, 49); */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -497,38 +502,25 @@ span.text-red {
   height: 400px;
   object-fit: cover;
 }
-.product-detail-image:hover {
-  background-color: #f02d34;
-}
+
 .small-images-container {
   display: flex;
   gap: 10px;
   margin-top: 20px;
 }
 .small-image {
-  background-color: #ebebeb;
   width: 70px;
   height: 70px;
+  object-fit: cover;
   cursor: pointer;
 }
 
-.selected-image {
-  background-color: #f02d34;
-}
-
-
-.product-detail-desc h4 {
-  margin-top: 10px;
-}
 .product-detail-desc p {
   margin-top: 10px;
 }
-.reviews p {
-  color: #324d67;
-  margin-top: 0px;
-}
+
 .product-detail-desc .price {
-  font-weight: 700;
+  /* font-weight: 500; */
   font-size: 26px;
   margin-top: 30px;
 }
@@ -605,7 +597,6 @@ span.text-red {
   text-align: center;
   margin: 50px;
   color: #324d67;
-
   font-size: 28px;
 }
 
@@ -672,7 +663,7 @@ span.text-red {
   flex-wrap: wrap;
   justify-content: space-evenly;
   gap: 15px;
-  margin-top: 20px;
+  margin: 30px 0px;
 }
 
 @media screen and (max-width: 800px) {

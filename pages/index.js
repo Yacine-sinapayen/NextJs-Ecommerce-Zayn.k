@@ -1,5 +1,4 @@
 import React, {createRef} from "react";
-const { motion } = require("framer-motion");
 
 import { client } from "../lib/client";
 import { HeroBanner, ProductsContainer, AboutMe, Contact } from "../components";
