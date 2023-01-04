@@ -18,6 +18,7 @@ const Contact = ({ contact }) => {
     >
       <div className="contact-infos-container">
         <div className="contact-infos-items">
+          {/* Adress */}
           <div className="contact-item">
             <div>
               <FmdGoodOutlinedIcon />
@@ -26,6 +27,8 @@ const Contact = ({ contact }) => {
               <p>{contact.contactAdress}</p>
             </div>
           </div>
+          
+          {/* Email */}
           <div className="contact-item">
             <div>
               <EmailOutlinedIcon />
@@ -34,14 +37,18 @@ const Contact = ({ contact }) => {
               <p>{contact.contactMail}</p>
             </div>
           </div>
-          <div className="contact-item">
+
+          {/* Phone */}
+          {/* <div className="contact-item">
             <div>
               <PhoneAndroidOutlinedIcon />
             </div>
             <div>
               <p>{contact.contactNumber}</p>
             </div>
-          </div>
+          </div> */}
+
+          {/* Network */}
           <div className="contact-item">
             <div>
               <Image width="20px" height="20px" src={instaLogo} />

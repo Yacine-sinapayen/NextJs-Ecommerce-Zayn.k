@@ -32,9 +32,33 @@ export default {
       type: "number",
     },
     {
+      name: "description",
+      title: "Description",
+      type: "string",
+    },
+    {
       name: "details",
       title: "Details",
       type: "string",
+    },
+    {
+      name: "workforce",
+      title: "Effectifs",
+      type: "string",
+    },
+    {
+      name: "place",
+      title: "Lieu",
+      type: "string",
+    },
+    {
+      title: 'date',
+      name: 'date',
+      type: 'date',
+      options: {
+        dateFormat: 'DD-MM-YYYY',
+        calendarTodayLabel: 'Today'
+      } 
     },
   ],
 };
