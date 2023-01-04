@@ -1,6 +1,4 @@
 import React from "react";
-import Image from "next/image";
-import instaLogo from "../assets/insta.png";
 import FmdGoodOutlinedIcon from "@mui/icons-material/FmdGoodOutlined";
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import InstagramIcon from '@mui/icons-material/Instagram';
@@ -50,8 +48,7 @@ const Contact = ({ contact }) => {
           {/* Network */}
           <div className="contact-item">
             <div>
-            <InstagramIcon />
-              {/* <Image width="20px" height="20px" src={instaLogo} /> */}
+              <InstagramIcon />
             </div>
             <div>
               <p>@kamalsafar_</p>

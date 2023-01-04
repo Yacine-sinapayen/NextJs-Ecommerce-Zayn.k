@@ -209,7 +209,7 @@ span.text-red {
 }
 
 .product-image {
-  height: 300px;
+  height: 350px;
   width: 318px;
   object-fit: cover;
   background-color: #ebebeb;
@@ -640,8 +640,8 @@ span.text-red {
 .maylike-products-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
-  gap: 15px;
+  justify-content: center;
+  gap: 3px;
   margin: 30px 0px;
 }
 

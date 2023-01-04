@@ -44,32 +44,34 @@ const Navbar = ({ isVisible }) => {
           </Link>
 
           {/* LOGO */}
-          <div className="navBar-logo">
-            <div className="navBar-logo-content">
-              <h1
-                // Réinsérer ce style en cas de fond plus foncé pour faire ressortir le logo
-                // style={{ color: !location && "#4b4b4b" }}
-                style={{ color: "#4b4b4b" }}
-              >
-                ZAYN.K
-              </h1>
-              <div className="navBar-logo-subtitile">
-                <span
-                  className=" navBar-logo-line"
+          <Link href={'/'}>
+            <div className="navBar-logo">
+              <div className="navBar-logo-content">
+                <h1
                   // Réinsérer ce style en cas de fond plus foncé pour faire ressortir le logo
-                  // style={{ background: !location && "#4b4b4b" }}
-                  style={{ background:  "#4b4b4b" }}
-                ></span>
-                <h2
-                  // Réinsérer ce style en cas de fond plus foncé pour faire ressortir le logo
-                  // style={{ background: !location && "#4b4b4b" }}
-                  style={{ color:  "#4b4b4b" }}
+                  // style={{ color: !location && "#4b4b4b" }}
+                  style={{ color: "#4b4b4b" }}
                 >
-                  COIFFURE MASCULINE
-                </h2>
+                  ZAYN.K
+                </h1>
+                <div className="navBar-logo-subtitile">
+                  <span
+                    className=" navBar-logo-line"
+                    // Réinsérer ce style en cas de fond plus foncé pour faire ressortir le logo
+                    // style={{ background: !location && "#4b4b4b" }}
+                    style={{ background:  "#4b4b4b" }}
+                  ></span>
+                  <h2
+                    // Réinsérer ce style en cas de fond plus foncé pour faire ressortir le logo
+                    // style={{ background: !location && "#4b4b4b" }}
+                    style={{ color:  "#4b4b4b" }}
+                  >
+                    COIFFURE MASCULINE
+                  </h2>
+                </div>
               </div>
             </div>
-          </div>
+          </Link>
 
           {/* PANIER */}
           <button className="cart-icon" onClick={() => setShowCart(true)}>
