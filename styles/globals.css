@@ -65,7 +65,6 @@ p {
 
 .navBar-social {
   /* background: blue; */
-  width: 33%;
   cursor: pointer;
 }
 
@@ -78,7 +77,6 @@ p {
 }
 .navBar-logo {
   /* background: green; */
-  width: 33%;
   cursor: pointer;
 }
 
@@ -87,7 +85,6 @@ p {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  width: 48%;
   margin: auto;
 }
 .navBar-logo-content h1 {
@@ -106,7 +103,7 @@ p {
 }
 
 .navBar-logo-subtitile span {
-  width: 58px;
+  width: 30%;
   height: 1px;
   background: white;
 }
@@ -118,9 +115,6 @@ p {
   color: white;
 }
 
-.cart-icon {
-  width: 33%;
-}
 
 .background-black-active{
   background: black !important;
@@ -273,23 +267,27 @@ span.text-red {
 
 /* CONTACT ---------- */
 .contact-infos-container{
+  /* background: blue; */
   border-top: 1px solid rgba(75, 75, 75, 0.3);
-  padding: 35px;
+  padding: 35px 0px;
 }
 
 .contact-infos-items{
+  /* background: red; */
   display:flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  /* background: red; */
+  justify-content: center;
 }
 
 .contact-item {
+  /* background: #0a7eeb; */
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 5px;
   margin-bottom: 30px;
-  /* background: #0a7eeb; */
+  width: calc(100%/3);
+  cursor: pointer;
 }
 
 .contact-law{
@@ -304,10 +302,8 @@ span.text-red {
 .hero-banner-btn{
   position: absolute;
   top: 70%;
-  left: 25%;
-  right: 25%;
-  width: 200px;
-  margin: auto;
+  left: 50%;
+  transform: translate(-50%, -50%)
 }
 
 .hero-banner-btn .btn{
@@ -316,7 +312,7 @@ span.text-red {
   /* border: 2px solid var(--color-primary); */
   font-weight: 300;
   font-size: 1rem;
-  width: 250px;
+  width: 180px;
 }
 
 .hero-banner-btn .btn:hover{
@@ -704,6 +700,11 @@ span.text-red {
   .contact-container{
     height: 80vh;
   }
+  .contact-item {
+    /* background: #0a7eeb; */
+    width: 100%;
+  }
+  /* ---------- */
   .cart-container {
     width: 415px;
     padding: 4px;

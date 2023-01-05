@@ -37,10 +37,10 @@ const Navbar = ({ isVisible }) => {
       >
         <div className="navbar-content">
           {/* RÉSEAUX */}
-          <Link href={`https://www.instagram.com/kamalsafar_`} target="_blank">
-            <div className="navBar-social">
-              <Image width="25px" height="25px" src={instaLogo} />
-            </div>
+          <Link href={`https://www.instagram.com/kamalsafar_`}>
+            <a className="navBar-social" target="_blank" rel="noreferrer">
+              <Image width="30px" height="30px" src={instaLogo} />
+            </a>
           </Link>
 
           {/* LOGO */}
