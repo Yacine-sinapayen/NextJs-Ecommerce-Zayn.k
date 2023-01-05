@@ -3,11 +3,10 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 
 import { AiOutlineShopping } from "react-icons/ai";
+import InstagramIcon from "@mui/icons-material/Instagram";
 import { Cart } from "./";
 import { useStateContext } from "../context/StateContext";
 import Image from "next/image";
-import instaLogo from "../assets/insta.png";
-import zaynkLogo from "../assets/zaynkLogo.png";
 const { motion } = require("framer-motion");
 
 const Navbar = ({ isVisible }) => {
@@ -39,7 +38,7 @@ const Navbar = ({ isVisible }) => {
           {/* RÉSEAUX */}
           <Link href={`https://www.instagram.com/kamalsafar_`}>
             <a className="navBar-social" target="_blank" rel="noreferrer">
-              <Image width="30px" height="30px" src={instaLogo} />
+              <InstagramIcon sx={{ fontSize: 30 }}/>
             </a>
           </Link>
 
