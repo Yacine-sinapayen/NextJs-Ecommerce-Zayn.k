@@ -1,8 +1,9 @@
 import React from "react";
 import FmdGoodOutlinedIcon from "@mui/icons-material/FmdGoodOutlined";
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
-import InstagramIcon from '@mui/icons-material/Instagram';
+import InstagramIcon from "@mui/icons-material/Instagram";
 import PhoneAndroidOutlinedIcon from "@mui/icons-material/PhoneAndroidOutlined";
+import Link from "next/link";
 const { motion } = require("framer-motion");
 
 const Contact = ({ contact }) => {
@@ -16,24 +17,28 @@ const Contact = ({ contact }) => {
       <div className="contact-infos-container">
         <div className="contact-infos-items">
           {/* Adress */}
-          <div className="contact-item">
-            <div>
-              <FmdGoodOutlinedIcon />
-            </div>
-            <div>
-              <p>{contact.contactAdress}</p>
-            </div>
-          </div>
-          
+          <Link href={`https://goo.gl/maps/7Rg5E29iGqtyTQy27`}>
+            <a target="_blank" rel="noreferrer" className="contact-item">
+              <div>
+                <FmdGoodOutlinedIcon />
+              </div>
+              <div>
+                <p>{contact.contactAdress}</p>
+              </div>
+            </a>
+          </Link>
+
           {/* Email */}
-          <div className="contact-item">
-            <div>
-              <EmailOutlinedIcon />
-            </div>
-            <div>
-              <p>{contact.contactMail}</p>
-            </div>
-          </div>
+          <Link href="mailto:zayn.ksalon@gmail.com">
+            <a className="contact-item" target="_blank" rel="noreferrer">
+              <div>
+                <EmailOutlinedIcon />
+              </div>
+              <div>
+                <p>{contact.contactMail}</p>
+              </div>
+            </a>
+          </Link>
 
           {/* Phone */}
           {/* <div className="contact-item">
@@ -46,14 +51,16 @@ const Contact = ({ contact }) => {
           </div> */}
 
           {/* Network */}
-          <div className="contact-item">
+          <Link href={`https://www.instagram.com/kamalsafar_`}>
+            <a target="_blank" rel="noreferrer" className="contact-item">
             <div>
               <InstagramIcon />
             </div>
             <div>
               <p>@kamalsafar_</p>
             </div>
-          </div>
+            </a>
+          </Link>
         </div>
       </div>
 
