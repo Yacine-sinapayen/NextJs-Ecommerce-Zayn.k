@@ -66,6 +66,8 @@ p {
 .navBar-social {
   /* background: blue; */
   cursor: pointer;
+  display: flex;
+  align-items: center;
 }
 
 .navbar-content {
@@ -156,7 +158,8 @@ span.text-red {
   border: none;
   background-color: transparent;
   display: flex;
-  justify-content: end;
+  justify-content: center;
+  align-items: center;
 }
 .cart-icon:hover {
   transform: scale(1.1, 1.1);
