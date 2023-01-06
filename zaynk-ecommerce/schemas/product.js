@@ -52,8 +52,17 @@ export default {
       type: "string",
     },
     {
-      title: 'date',
-      name: 'date',
+      title: 'firstDate',
+      name: 'firstDate',
+      type: 'date',
+      options: {
+        dateFormat: 'DD-MM-YYYY',
+        calendarTodayLabel: 'Today'
+      } 
+    },
+    {
+      title: 'secondDate',
+      name: 'secondDate',
       type: 'date',
       options: {
         dateFormat: 'DD-MM-YYYY',

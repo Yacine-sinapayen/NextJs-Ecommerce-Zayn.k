@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import moment from 'moment';
+moment.locale('fr');
 import {
   AiOutlineMinus,
   AiOutlinePlus,
@@ -10,7 +12,7 @@ import Contact from "../../components/Contact";
 
 
 const ProductDetails = ({ product, products, contactData }) => {
-  const { image, name, details, place, date, workforce, price } = product;
+  const { image, name, details, place, firstDate, secondDate, workforce, price } = product;
   const [index, setIndex] = useState(0);
   const { decQty, incQty, qty, onAdd, setShowCart } = useStateContext();
 
@@ -45,13 +47,16 @@ const ProductDetails = ({ product, products, contactData }) => {
         <div className="product-detail-desc">
           <h1>{name}</h1>
 
-          <p>Détails : {details}</p>
+          <p>{details}</p>
 
           <p>Lieu : {place}</p>
           
-          <p>Date : {date}</p>
+          <p>Date : {moment(firstDate).format('L')}</p>
+          {/* {moment(secondDate).format('L')} */}
 
-          <p>Effectif : {workforce}</p>
+          <p>Effectif : {workforce} participants</p>
+
+          <p>Programme : </p>
 
           <p className="price">{price}€</p>
 

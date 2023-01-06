@@ -19,6 +19,7 @@
     "@stripe/stripe-js": "^1.25.0",
     "canvas-confetti": "^1.5.1",
     "framer-motion": "^7.6.19",
+    "moment": "^2.29.4",
     "next": "12.1.0",
     "next-sanity-image": "^3.2.1",
     "react": "17.0.2",
