@@ -4,7 +4,7 @@ import Link from "next/link";
 import { urlFor } from "../lib/client";
 const { motion } = require("framer-motion");
 
-const Product = ({ product: { image, name, slug, price, description,  details }}) => {
+const Product = ({ product: { image, name, slug, price, description,  details, classement }}) => {
 
   return (
     <motion.div whileHover={{ scale: 1.01, duration: 1 }}>

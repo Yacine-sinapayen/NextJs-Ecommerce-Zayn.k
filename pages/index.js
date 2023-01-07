@@ -1,14 +1,14 @@
 import React, {createRef} from "react";
-
+import { useStateContext } from "../context/StateContext";
 import { client } from "../lib/client";
 import { HeroBanner, ProductsContainer, AboutMe, Contact } from "../components";
 
 const Home = ({ productsData, bannerData, aboutMeData, contactData }) => {
-
-  const scrollDiv = createRef();
-  const scrollSmoothHandler = () => {
-    scrollDiv.current.scrollIntoView({ behavior: "smooth" });
-  };
+  
+  const {
+    scrollSmoothHandler,
+    scrollDiv,
+  } = useStateContext();
 
   return (
     <>

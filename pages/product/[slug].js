@@ -20,6 +20,10 @@ const ProductDetails = ({ product, products, contactData }) => {
     onAdd(product, qty);
     setShowCart(true);
   }
+
+  const [bckBtn1, setBckBtn1] = useState(true);
+
+
   return (
     <>
       <div className="product-detail-container container">
@@ -51,8 +55,18 @@ const ProductDetails = ({ product, products, contactData }) => {
 
           <p>Lieu : {place}</p>
           
-          <p>Date : {moment(firstDate).format('L')}</p>
-          {/* {moment(secondDate).format('L')} */}
+          <div className="date-container">
+            <p>Date : </p>
+            {/* btn 1 */}
+            <button className={bckBtn1 ? "date-btn date-btn-active" : "date-btn"} onClick={()=> setBckBtn1(true)}  type="button">
+              {moment(firstDate).format('L')}
+            </button>
+
+            {/* btn 2 */}
+            <button className={bckBtn1 ? "date-btn" : "date-btn date-btn-active"} onClick={()=> setBckBtn1(false)} type="button">
+              {moment(secondDate).format('L')}
+            </button>
+          </div>
 
           <p>Effectif : {workforce} participants</p>
 
