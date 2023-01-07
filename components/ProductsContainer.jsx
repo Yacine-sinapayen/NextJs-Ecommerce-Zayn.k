@@ -5,6 +5,8 @@ import { Product } from "../components";
 const { motion } = require("framer-motion");
 
 const ProductsContainer = ({ productsData, scrollDiv }) => {
+  const sortedProducts = productsData.slice().sort((a,b) => a.classement - b.classement);
+ 
   return (
     <>
       <div 
@@ -20,7 +22,7 @@ const ProductsContainer = ({ productsData, scrollDiv }) => {
         </motion.div>
 
         <div className="product-main">
-          {productsData?.map((product) => (
+          {sortedProducts?.map((product) => (
             <motion.div
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1, x: 10 }}

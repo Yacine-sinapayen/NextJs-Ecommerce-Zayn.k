@@ -1,9 +1,15 @@
-import React, { createContext, useContext, useState } from "react";
+import React, { createContext, useContext, useState, createRef } from "react";
 import { toast } from "react-hot-toast";
 
 const Context = createContext();
 
 export const StateContext = ({ children }) => {
+  // Scroll to div course
+  const scrollDiv = createRef();
+  const scrollSmoothHandler = () => {
+  scrollDiv.current.scrollIntoView({ behavior: "smooth" });
+  };
+
   const [showCart, setShowCart] = useState(false);
   const [cartItems, setCartItems] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
@@ -110,6 +116,8 @@ export const StateContext = ({ children }) => {
         setCartItems,
         setTotalPrice,
         setTotalQuantities,
+        scrollSmoothHandler,
+        scrollDiv,
       }}
     >
       {children}

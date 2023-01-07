@@ -52,6 +52,11 @@ export default {
       type: "string",
     },
     {
+      title: 'Classement',
+      name: 'classement',
+      type: 'number'
+    },
+    {
       title: 'firstDate',
       name: 'firstDate',
       type: 'date',

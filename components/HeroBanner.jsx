@@ -1,9 +1,7 @@
-import { Link } from "@mui/material";
 import React from "react";
-
 import { urlFor } from "../lib/client";
 const { motion } = require("framer-motion");
-import ReactPlayer from "react-player";
+// import ReactPlayer from "react-player";
 
 const HeroBanner = ({ heroBanner, toScroll }) => {
   return (
