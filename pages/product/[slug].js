@@ -71,6 +71,9 @@ const ProductDetails = ({ product, products, contactData }) => {
           <p>Effectif : {workforce} participants</p>
 
           <p>Programme : </p>
+          <div className="programme-container">
+            ici tableau
+          </div>
 
           <p className="price">{price}€</p>
 
