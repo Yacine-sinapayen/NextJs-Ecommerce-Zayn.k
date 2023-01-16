@@ -5,7 +5,7 @@ export default {
   fields: [
     {
       name: "image",
-      title: "Image",
+      title: "Image du produit",
       type: "array",
       of: [{ type: "image" }],
       options: {
@@ -14,12 +14,12 @@ export default {
     },
     {
       name: "name",
-      title: "Name",
+      title: "Nom du produit",
       type: "string",
     },
     {
       name: "slug",
-      title: "Slug",
+      title: "Identifiant du produit",
       type: "slug",
       options: {
         source: "name",
@@ -28,22 +28,17 @@ export default {
     },
     {
       name: "price",
-      title: "Price",
+      title: "Prix",
       type: "number",
     },
     {
       name: "description",
-      title: "Description",
+      title: "Phrase d'accroche",
       type: "string",
     },
     {
       name: "details",
-      title: "Details",
-      type: "string",
-    },
-    {
-      name: "workforce",
-      title: "Effectifs",
+      title: "Description détaillée",
       type: "string",
     },
     {
@@ -52,13 +47,13 @@ export default {
       type: "string",
     },
     {
-      title: 'Classement',
       name: 'classement',
+      title: 'Classement du produit',
       type: 'number'
     },
     {
-      title: 'firstDate',
       name: 'firstDate',
+      title: 'Première date',
       type: 'date',
       options: {
         dateFormat: 'DD-MM-YYYY',
@@ -66,13 +61,23 @@ export default {
       } 
     },
     {
-      title: 'secondDate',
+      name: "staffOne",
+      title: "Effectif de la première date",
+      type: "string",
+    },
+    {
       name: 'secondDate',
+      title: 'Seconde date',
       type: 'date',
       options: {
         dateFormat: 'DD-MM-YYYY',
         calendarTodayLabel: 'Today'
       } 
+    },
+    {
+      name: "staffTwo",
+      title: "Effectif de la seconde date",
+      type: "string",
     },
   ],
 };
