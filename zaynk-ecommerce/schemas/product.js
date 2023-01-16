@@ -42,11 +42,6 @@ export default {
       type: "string",
     },
     {
-      name: "workforce",
-      title: "Effectifs",
-      type: "string",
-    },
-    {
       name: "place",
       title: "Lieu",
       type: "string",
