@@ -130,8 +130,6 @@ p {
 
 /* ------------------------- */
 
-
-
 @keyframes marquee {
   from {
     transform: translateX(0);
@@ -460,7 +458,7 @@ span.text-red {
   transform: scale(1, 1);
 }
 
-/* Slug products ---------- */
+/* Slug products SLUG ---------- */
 .product-detail-container {
   /* background: red; */
   display: flex;
@@ -511,6 +509,10 @@ span.text-red {
 .date-btn-active{
   background: var(--color-primary);
   color: #fff;
+}
+
+.details-container{
+  margin-top: 30px;
 }
 
 .product-detail-desc p {

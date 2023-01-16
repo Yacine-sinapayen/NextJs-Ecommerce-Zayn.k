@@ -55,13 +55,24 @@ const ProductDetails = ({ product, products, contactData }) => {
   const {
     image,
     name,
-    details,
-    place,
-    firstDate,
-    secondDate,
-    staffOne,
-    staffTwo,
     price,
+    description,
+    detailsPartOne,
+    detailsPartOneParaOne,
+    detailsPartOneParaTwo,
+    detailsPartOneParaThree,
+    detailsPartOneParaFour,
+    detailsPartTwo,
+    detailsPartTwoParaOne,
+    detailsPartTwoParaTwo,
+    detailsPartTwoParaThree,
+    detailsPartTwoParaFour,
+    place,
+    classement,
+    firstDate,
+    staffOne,
+    secondDate,
+    staffTwo,
   } = product;
   const [index, setIndex] = useState(0);
   const { decQty, incQty, qty, onAdd, setShowCart } = useStateContext();
@@ -105,46 +116,51 @@ const ProductDetails = ({ product, products, contactData }) => {
           <h1>{name}</h1>
 
           <p className="price">{price}€</p>
+              
+          <div className="details-container">
+            <h3 className="details-container-1">{detailsPartOne}</h3>
+            <p>{detailsPartOneParaOne}</p>
+            <p>{detailsPartOneParaTwo}</p>
+            <p>{detailsPartOneParaThree}</p>
+            <p>{detailsPartOneParaFour}</p>
 
-          <p>{details}</p>
-          <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
-            <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
-              <Typography>Collapsible Group Item #1</Typography>
-            </AccordionSummary>
-            <AccordionDetails>
-              <Typography>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-                malesuada lacus ex, sit amet blandit leo lobortis eget. Lorem ipsum dolor
-                sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
-                sit amet blandit leo lobortis eget.
-              </Typography>
-            </AccordionDetails>
-          </Accordion>
+            <h3>{detailsPartTwo}</h3>
+            <p>{detailsPartTwoParaOne}</p>
+            <p>{detailsPartTwoParaTwo}</p>
+            <p>{detailsPartTwoParaThree}</p>
+            <p>{detailsPartTwoParaFour}</p>
+          </div>
 
           <p>Lieu : {place}</p>
 
-          <div className="date-container">
-            <p>Date : </p>
-            {/* btn 1 */}
-            <button
-              className={bckBtn1 ? "date-btn date-btn-active" : "date-btn"}
-              onClick={() => setBckBtn1(true)}
-              type="button"
-            >
-              {moment(firstDate).format("L")}
-            </button>
+          {firstDate || secondDate ? (
+            <div className="date-container">
+              <p>Date : </p>
+              {/* btn 1 */}
+              <button
+                className={bckBtn1 ? "date-btn date-btn-active" : "date-btn"}
+                onClick={() => setBckBtn1(true)}
+                type="button"
+              >
+                {/* {moment(firstDate).format("L")} */}
+                {firstDate}
+              </button>
 
-            {/* btn 2 */}
-            <button
-              className={bckBtn1 ? "date-btn" : "date-btn date-btn-active"}
-              onClick={() => setBckBtn1(false)}
-              type="button"
-            >
-              {moment(secondDate).format("L")}
-            </button>
-          </div>
+              {/* btn 2 */}
+              <button
+                className={bckBtn1 ? "date-btn" : "date-btn date-btn-active"}
+                onClick={() => setBckBtn1(false)}
+                type="button"
+              >
+                {/* {moment(secondDate).format("L")} */}
+                {secondDate}
+              </button>
+            </div>
+          ) : (
+            " "
+          )}
 
-          <p>Effectif : {bckBtn1 ? staffOne : staffTwo}</p>
+          <p>Effectif : {staffTwo}</p>
 
           <p>Programme : </p>
           {name === "Next level - 1 jour" && (
