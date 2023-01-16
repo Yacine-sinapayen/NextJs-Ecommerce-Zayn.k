@@ -20,12 +20,24 @@ const ProductDetails = ({ product, products, contactData }) => {
   const {
     image,
     name,
-    details,
-    place,
-    firstDate,
-    secondDate,
-    workforce,
     price,
+    description,
+    detailsPartOne,
+    detailsPartOneParaOne,
+    detailsPartOneParaTwo,
+    detailsPartOneParaThree,
+    detailsPartOneParaFour,
+    detailsPartTwo,
+    detailsPartTwoParaOne,
+    detailsPartTwoParaTwo,
+    detailsPartTwoParaThree,
+    detailsPartTwoParaFour,
+    place,
+    classement,
+    firstDate,
+    staffOne,
+    secondDate,
+    staffTwo,
   } = product;
   const [index, setIndex] = useState(0);
   const { decQty, incQty, qty, onAdd, setShowCart } = useStateContext();
@@ -66,65 +78,110 @@ const ProductDetails = ({ product, products, contactData }) => {
 
           <p className="price">{price}€</p>
 
-          <p>{details}</p>
+              
+          <div className="details-container">
+            <h3 className="details-container-1">{detailsPartOne}</h3>
+            <p>{detailsPartOneParaOne}</p>
+            <p>{detailsPartOneParaTwo}</p>
+            <p>{detailsPartOneParaThree}</p>
+            <p>{detailsPartOneParaFour}</p>
+
+            <h3>{detailsPartTwo}</h3>
+            <p>{detailsPartTwoParaOne}</p>
+            <p>{detailsPartTwoParaTwo}</p>
+            <p>{detailsPartTwoParaThree}</p>
+            <p>{detailsPartTwoParaFour}</p>
+          </div>
 
           <p>Lieu : {place}</p>
 
-          <div className="date-container">
-            <p>Date : </p>
-            {/* btn 1 */}
-            <button
-              className={bckBtn1 ? "date-btn date-btn-active" : "date-btn"}
-              onClick={() => setBckBtn1(true)}
-              type="button"
-            >
-              {moment(firstDate).format("L")}
-            </button>
+          {firstDate || secondDate ? (
+            <div className="date-container">
+              <p>Date : </p>
+              {/* btn 1 */}
+              <button
+                className={bckBtn1 ? "date-btn date-btn-active" : "date-btn"}
+                onClick={() => setBckBtn1(true)}
+                type="button"
+              >
+                {/* {moment(firstDate).format("L")} */}
+                {firstDate}
+              </button>
 
-            {/* btn 2 */}
-            <button
-              className={bckBtn1 ? "date-btn" : "date-btn date-btn-active"}
-              onClick={() => setBckBtn1(false)}
-              type="button"
-            >
-              {moment(secondDate).format("L")}
-            </button>
-          </div>
+              {/* btn 2 */}
+              <button
+                className={bckBtn1 ? "date-btn" : "date-btn date-btn-active"}
+                onClick={() => setBckBtn1(false)}
+                type="button"
+              >
+                {/* {moment(secondDate).format("L")} */}
+                {secondDate}
+              </button>
+            </div>
+          ) : (
+            " "
+          )}
 
-          <p>Effectif : {workforce}</p>
+          <p>Effectif : {staffTwo}</p>
 
           <p>Programme : </p>
           {name === "Next level - 1 jour" && (
             <TableContainer>
-              <Table sx={{width:'30%', border:'1px solid black'}}>
+              <Table sx={{ width: "30%", border: "1px solid black" }}>
                 <TableHead>
                   <TableRow>
-                    <TableCell sx={{border:'1px solid black'}} sx={{border:'1px solid black'}} align="left">10h - 17h</TableCell>
+                    <TableCell
+                      sx={{ border: "1px solid black" }}
+                      sx={{ border: "1px solid black" }}
+                      align="left"
+                    >
+                      10h - 17h
+                    </TableCell>
                   </TableRow>
                 </TableHead>
                 <TableBody>
                   <TableRow>
-                    <TableCell sx={{border:'1px solid black'}} component="th" scope="row">
+                    <TableCell
+                      sx={{ border: "1px solid black" }}
+                      component="th"
+                      scope="row"
+                    >
                       introduction
                     </TableCell>
                   </TableRow>
                   <TableRow>
-                    <TableCell sx={{border:'1px solid black'}} component="th" scope="row">
+                    <TableCell
+                      sx={{ border: "1px solid black" }}
+                      component="th"
+                      scope="row"
+                    >
                       Présentation théorique
                     </TableCell>
                   </TableRow>
                   <TableRow>
-                    <TableCell sx={{border:'1px solid black'}} component="th" scope="row">
+                    <TableCell
+                      sx={{ border: "1px solid black" }}
+                      component="th"
+                      scope="row"
+                    >
                       démonstrations
                     </TableCell>
                   </TableRow>
                   <TableRow>
-                    <TableCell sx={{border:'1px solid black'}} component="th" scope="row">
+                    <TableCell
+                      sx={{ border: "1px solid black" }}
+                      component="th"
+                      scope="row"
+                    >
                       Session pratique
                     </TableCell>
                   </TableRow>
                   <TableRow>
-                    <TableCell sx={{border:'1px solid black'}} component="th" scope="row">
+                    <TableCell
+                      sx={{ border: "1px solid black" }}
+                      component="th"
+                      scope="row"
+                    >
                       Récapitulatif
                     </TableCell>
                   </TableRow>
