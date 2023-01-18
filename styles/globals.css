@@ -203,6 +203,7 @@ span.text-red {
   cursor: pointer;
   color: #324d67;
   width: 310px;
+  margin: 5px;
   height: auto;
   transition: 0.4s ease-out;
   box-shadow: 0px 7px 10px rgba(black, 0.5);
