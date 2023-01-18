@@ -12,9 +12,9 @@ const Contact = ({ contact }) => {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1, x: 10 }}
       transition={{ duration: 0.7 }}
-      className="container"
+      className="contact-infos-container"
     >
-      <div className="contact-infos-container">
+      <div>
         <div className="contact-infos-items">
           {/* Adress */}
           <Link href={`https://goo.gl/maps/7Rg5E29iGqtyTQy27`}>

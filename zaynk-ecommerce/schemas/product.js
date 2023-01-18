@@ -18,6 +18,21 @@ export default {
       type: "string",
     },
     {
+      name: "price",
+      title: "Prix",
+      type: "number",
+    },
+    {
+      name: 'description',
+      title: 'Phrase accroche homepage',
+      type: 'string'
+    },
+    {
+      name: 'classement',
+      title: 'Classement du produit sur la homepage',
+      type: 'number'
+    },
+    {
       name: "slug",
       title: "identifiant unique du produit",
       type: "slug",
@@ -25,16 +40,6 @@ export default {
         source: "name",
         maxLength: 90,
       },
-    },
-    {
-      name: "price",
-      title: "Prix",
-      type: "number",
-    },
-    {
-      name: "description",
-      title: "Phrase d'accroche homepage",
-      type: "string",
     },
     {
       name: "detailsPartOne",
@@ -86,50 +91,16 @@ export default {
       title: "Partie 2 détails : Paragraphe 4",
       type: "string",
     },
-    // {
-    //   name: 'details',
-    //   title: 'Détails du produit', 
-    //   type: 'array', 
-    //   of: [{type: 'block'}]
-    // },
-    {
-      name: "place",
-      title: "Lieu de la formation",
-      type: "string",
-    },
-    {
-      name: 'classement',
-      title: 'Classement du produit sur la homepage',
-      type: 'number'
-    },
     {
       name: "firstDate",
       title: "Première date",
       type: "string",
     },
-    // {
-    //   name: 'firstDate',
-    //   title: 'Première date',
-    //   type: 'date',
-    //   options: {
-    //     dateFormat: 'DD-MM-YYYY',
-    //     calendarTodayLabel: 'Today'
-    //   } 
-    // },
     {
       name: "staffOne",
       title: "Effectif de la première date",
       type: "string",
     },
-    // {
-    //   name: 'secondDate',
-    //   title: 'Seconde date',
-    //   type: 'date',
-    //   options: {
-    //     dateFormat: 'DD-MM-YYYY',
-    //     calendarTodayLabel: 'Today'
-    //   } 
-    // },
     {
       name: "secondDate",
       title: "Seconde date",
@@ -141,9 +112,31 @@ export default {
       type: "string",
     },
     {
-      name: "staffTwo",
-      title: "Effectif de la seconde date",
+      name: "place",
+      title: "Lieu de la formation",
       type: "string",
     },
+    {
+      name: "titleDayOne",
+      title: "Titre et heure jour 1",
+      type: "string",
+    },
+    {
+      title: 'Programme jour 1',
+      name: 'programDayOne',
+      type: 'array',
+      of: [{type: 'string'}]
+    },
+    {
+      name: "titleDayTwo",
+      title: "Titre et heure jour 2",
+      type: "string",
+    },
+    {
+      title: 'Programme jour 2',
+      name: 'programDayTwo',
+      type: 'array',
+      of: [{type: 'string'}]
+    }
   ],
 };

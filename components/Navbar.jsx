@@ -38,36 +38,34 @@ const Navbar = ({ isVisible }) => {
           {/* RÉSEAUX */}
           <Link href={`https://www.instagram.com/kamalsafar_`}>
             <a className="navBar-social" target="_blank" rel="noreferrer">
-              <InstagramIcon sx={{ fontSize: 30 }}/>
+              <InstagramIcon sx={{ fontSize: 30 }} />
             </a>
           </Link>
 
           {/* LOGO */}
-          <Link href={'/'}>
-            <div className="navBar-logo">
-              <div className="navBar-logo-content">
-                <h1
+          <Link href={"/"}>
+            <div className="navBar-logo-content">
+              <h1
+                // Réinsérer ce style en cas de fond plus foncé pour faire ressortir le logo
+                // style={{ color: !location && "#4b4b4b" }}
+                style={{ color: "#4b4b4b" }}
+              >
+                ZAYN.K
+              </h1>
+              <div className="navBar-logo-subtitile">
+                <span
+                  className=" navBar-logo-line"
                   // Réinsérer ce style en cas de fond plus foncé pour faire ressortir le logo
-                  // style={{ color: !location && "#4b4b4b" }}
+                  // style={{ background: !location && "#4b4b4b" }}
+                  style={{ background: "#4b4b4b" }}
+                ></span>
+                <h2
+                  // Réinsérer ce style en cas de fond plus foncé pour faire ressortir le logo
+                  // style={{ background: !location && "#4b4b4b" }}
                   style={{ color: "#4b4b4b" }}
                 >
-                  ZAYN.K
-                </h1>
-                <div className="navBar-logo-subtitile">
-                  <span
-                    className=" navBar-logo-line"
-                    // Réinsérer ce style en cas de fond plus foncé pour faire ressortir le logo
-                    // style={{ background: !location && "#4b4b4b" }}
-                    style={{ background:  "#4b4b4b" }}
-                  ></span>
-                  <h2
-                    // Réinsérer ce style en cas de fond plus foncé pour faire ressortir le logo
-                    // style={{ background: !location && "#4b4b4b" }}
-                    style={{ color:  "#4b4b4b" }}
-                  >
-                    COIFFURE MASCULINE
-                  </h2>
-                </div>
+                  COIFFURE MASCULINE
+                </h2>
               </div>
             </div>
           </Link>

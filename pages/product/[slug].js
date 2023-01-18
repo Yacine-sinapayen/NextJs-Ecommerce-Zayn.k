@@ -14,48 +14,46 @@ import TableCell, { tableCellClasses } from "@mui/material/TableCell";
 import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
-import ArrowForwardIosSharpIcon from '@mui/icons-material/ArrowForwardIosSharp';
-import MuiAccordion from '@mui/material/Accordion';
-import MuiAccordionSummary from '@mui/material/AccordionSummary';
-import MuiAccordionDetails from '@mui/material/AccordionDetails';
-import Typography from '@mui/material/Typography';
+import ArrowForwardIosSharpIcon from "@mui/icons-material/ArrowForwardIosSharp";
+import MuiAccordion from "@mui/material/Accordion";
+import MuiAccordionSummary from "@mui/material/AccordionSummary";
+import MuiAccordionDetails from "@mui/material/AccordionDetails";
+import Typography from "@mui/material/Typography";
 
 const Accordion = styled((props) => (
   <MuiAccordion disableGutters elevation={0} square {...props} />
 ))(({ theme }) => ({
-
-  '&:before': {
-    display: 'none',
+  "&:before": {
+    display: "none",
   },
 }));
 
 const AccordionSummary = styled((props) => (
   <MuiAccordionSummary
-    expandIcon={<ArrowForwardIosSharpIcon sx={{ fontSize: '0.9rem' }} />}
+    expandIcon={<ArrowForwardIosSharpIcon sx={{ fontSize: "0.9rem" }} />}
     {...props}
   />
 ))(({ theme }) => ({
-  flexDirection: 'row-reverse',
-  '& .MuiAccordionSummary-expandIconWrapper.Mui-expanded': {
-    transform: 'rotate(90deg)',
+  flexDirection: "row-reverse",
+  "& .MuiAccordionSummary-expandIconWrapper.Mui-expanded": {
+    transform: "rotate(90deg)",
   },
-  '& .MuiAccordionSummary-content': {
+  "& .MuiAccordionSummary-content": {
     marginLeft: theme.spacing(1),
   },
 }));
 
 const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
   padding: theme.spacing(2),
-  borderTop: '1px solid rgba(0, 0, 0, .125)',
+  borderTop: "1px solid rgba(0, 0, 0, .125)",
 }));
 
-
 const ProductDetails = ({ product, products, contactData }) => {
-
   const {
     image,
     name,
     price,
+    place,
     description,
     detailsPartOne,
     detailsPartOneParaOne,
@@ -67,19 +65,26 @@ const ProductDetails = ({ product, products, contactData }) => {
     detailsPartTwoParaTwo,
     detailsPartTwoParaThree,
     detailsPartTwoParaFour,
-    place,
-    classement,
     firstDate,
-    staffOne,
     secondDate,
+    staffOne,
     staffTwo,
+    titleDayOne,
+    titleDayTwo,
+    programDayOne,
+    programDayTwo,
+    tableData,
   } = product;
+
   const [index, setIndex] = useState(0);
+
   const { decQty, incQty, qty, onAdd, setShowCart } = useStateContext();
+
   const handleBuyNow = () => {
     onAdd(product, qty);
     setShowCart(true);
   };
+
   const [bckBtn1, setBckBtn1] = useState(true);
 
   // Accordéon
@@ -88,9 +93,11 @@ const ProductDetails = ({ product, products, contactData }) => {
     setExpanded(newExpanded ? panel : false);
   };
 
+  console.log(tableData);
   return (
     <>
       <div className="product-detail-container container">
+        {/* Part left image */}
         <div>
           <div className="product-detail-container-image">
             <img
@@ -112,29 +119,106 @@ const ProductDetails = ({ product, products, contactData }) => {
           </div>
         </div>
 
+        {/* Part right description */}
         <div className="product-detail-desc">
           <h1>{name}</h1>
 
-          <p className="price">{price}€</p>
-              
-          <div className="details-container">
-            <h3 className="details-container-1">{detailsPartOne}</h3>
-            <p>{detailsPartOneParaOne}</p>
-            <p>{detailsPartOneParaTwo}</p>
-            <p>{detailsPartOneParaThree}</p>
-            <p>{detailsPartOneParaFour}</p>
+          <p className="price mrgt20">{price}€</p>
 
-            <h3>{detailsPartTwo}</h3>
-            <p>{detailsPartTwoParaOne}</p>
-            <p>{detailsPartTwoParaTwo}</p>
-            <p>{detailsPartTwoParaThree}</p>
-            <p>{detailsPartTwoParaFour}</p>
+          {/* Détails */}
+          {/* <Accordion
+            expanded={expanded === "panel1"}
+            onChange={handleChange("panel1")}
+          >
+            <AccordionSummary
+              aria-controls="panel1d-content"
+              id="panel1d-header"
+              sx={{ padding: "0px" }}
+            >
+              <Typography sx={{ fontFamily: "GlacialIndifference" }}>
+                Détails :
+              </Typography>
+            </AccordionSummary>
+            <AccordionDetails>
+              <Typography
+                sx={{ fontFamily: "GlacialIndifference", fontWeight: "bold" }}
+              >
+                {detailsPartOne}
+              </Typography>
+              <Typography
+                sx={{ fontFamily: "GlacialIndifference", marginBottom: "10px" }}
+              >
+                {detailsPartOneParaOne}
+              </Typography>
+              <Typography
+                sx={{ fontFamily: "GlacialIndifference", marginBottom: "10px" }}
+              >
+                {detailsPartOneParaTwo}
+              </Typography>
+              <Typography
+                sx={{ fontFamily: "GlacialIndifference", marginBottom: "10px" }}
+              >
+                {detailsPartOneParaThree}
+              </Typography>
+              <Typography
+                sx={{ fontFamily: "GlacialIndifference", marginBottom: "10px" }}
+              >
+                {detailsPartOneParaFour}
+              </Typography>
+
+              <Typography
+                sx={{ fontFamily: "GlacialIndifference", fontWeight: "bold" }}
+              >
+                {detailsPartTwo}
+              </Typography>
+              <Typography
+                sx={{ fontFamily: "GlacialIndifference", marginBottom: "10px" }}
+              >
+                {detailsPartTwoParaOne}
+              </Typography>
+              <Typography
+                sx={{ fontFamily: "GlacialIndifference", marginBottom: "10px" }}
+              >
+                {detailsPartTwoParaTwo}
+              </Typography>
+              <Typography
+                sx={{ fontFamily: "GlacialIndifference", marginBottom: "10px" }}
+              >
+                {detailsPartTwoParaThree}
+              </Typography>
+              <Typography
+                sx={{ fontFamily: "GlacialIndifference", marginBottom: "10px" }}
+              >
+                {detailsPartTwoParaFour}
+              </Typography>
+            </AccordionDetails>
+          </Accordion> */}
+
+          {/* Détails */}
+          <div>
+            <h2 className="mrgt20">{detailsPartOne}</h2>
+            <p className="mrgt20"> {detailsPartOneParaOne}</p>
+            <p className="mrgt20"> {detailsPartOneParaTwo}</p>
+            <p className="mrgt20"> {detailsPartOneParaThree}</p>
+            <p className="mrgt20"> {detailsPartOneParaFour}</p>
+            {detailsPartTwo && (
+              <>
+                <h2 className="mrgt20">{detailsPartTwo}</h2>
+                <p className="mrgt20"> {detailsPartTwoParaOne}</p>
+                <p className="mrgt20"> {detailsPartTwoParaTwo}</p>
+                <p className="mrgt20"> {detailsPartTwoParaThree}</p>
+                <p className="mrgt20"> {detailsPartTwoParaFour}</p>
+              </>
+            )}
           </div>
 
-          <p>Lieu : {place}</p>
+          <p>
+            Participants : {bckBtn1 ? staffOne : staffTwo}
+          </p>
 
+          {/* Date */}
           {firstDate || secondDate ? (
-            <div className="date-container">
+            <div className="date-container mrgt20">
               <p>Date : </p>
               {/* btn 1 */}
               <button
@@ -142,90 +226,117 @@ const ProductDetails = ({ product, products, contactData }) => {
                 onClick={() => setBckBtn1(true)}
                 type="button"
               >
-                {/* {moment(firstDate).format("L")} */}
                 {firstDate}
               </button>
 
               {/* btn 2 */}
-              <button
-                className={bckBtn1 ? "date-btn" : "date-btn date-btn-active"}
-                onClick={() => setBckBtn1(false)}
-                type="button"
-              >
-                {/* {moment(secondDate).format("L")} */}
-                {secondDate}
-              </button>
+              {secondDate && (
+                <button
+                  className={bckBtn1 ? "date-btn" : "date-btn date-btn-active"}
+                  onClick={() => setBckBtn1(false)}
+                  type="button"
+                >
+                  {/* {moment(secondDate).format("L")} */}
+                  {secondDate}
+                </button>
+              )}
             </div>
           ) : (
             " "
           )}
 
-          <p>Effectif : {staffTwo}</p>
+          <p className="mrgt20">Lieu : {place}</p>
 
-          <p>Programme : </p>
-          {name === "Next level - 1 jour" && (
-            <TableContainer>
-              <Table sx={{ width: "30%", border: "1px solid black" }}>
-                <TableHead>
-                  <TableRow>
-                    <TableCell
-                      sx={{ border: "1px solid black" }}
-                      sx={{ border: "1px solid black" }}
-                      align="left"
-                    >
-                      10h - 17h
-                    </TableCell>
-                  </TableRow>
-                </TableHead>
-                <TableBody>
-                  <TableRow>
-                    <TableCell
-                      sx={{ border: "1px solid black" }}
-                      component="th"
-                      scope="row"
-                    >
-                      introduction
-                    </TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell
-                      sx={{ border: "1px solid black" }}
-                      component="th"
-                      scope="row"
-                    >
-                      Présentation théorique
-                    </TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell
-                      sx={{ border: "1px solid black" }}
-                      component="th"
-                      scope="row"
-                    >
-                      démonstrations
-                    </TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell
-                      sx={{ border: "1px solid black" }}
-                      component="th"
-                      scope="row"
-                    >
-                      Session pratique
-                    </TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell
-                      sx={{ border: "1px solid black" }}
-                      component="th"
-                      scope="row"
-                    >
-                      Récapitulatif
-                    </TableCell>
-                  </TableRow>
-                </TableBody>
-              </Table>
-            </TableContainer>
+          {/* Programme */}
+          {programDayOne && (
+            <Accordion
+              expanded={expanded === "panel1"}
+              onChange={handleChange("panel1")}
+            >
+              <AccordionSummary
+                aria-controls="panel1d-content"
+                id="panel1d-header"
+                sx={{ padding: "0px",  }}
+              >
+                <Typography sx={{ fontFamily: "GlacialIndifference"}}>
+                  Programme :
+                </Typography>
+              </AccordionSummary>
+              <AccordionDetails>
+                <TableContainer sx={{ display: "flex" }}>
+                  {/* tableau 1 */}
+                  <Table>
+                    <TableHead>
+                      <TableRow>
+                        {/* colonne1 */}
+                        <TableCell
+                          sx={{
+                            border: "1px solid rgba(75, 75, 75, 0.3)",
+                            fontWeight: "bold",
+                            fontFamily: "GlacialIndifference",
+                          }}
+                          align="left"
+                        >
+                          {titleDayOne}
+                        </TableCell>
+                      </TableRow>
+                    </TableHead>
+                    <TableBody>
+                      {programDayOne?.map((item, index) => (
+                        <TableRow key={index}>
+                          <TableCell
+                            sx={{
+                              border: "1px solid rgba(75, 75, 75, 0.3)",
+                              fontFamily: "GlacialIndifference",
+                            }}
+                            component="th"
+                            scope="row"
+                          >
+                            {item}
+                          </TableCell>
+                        </TableRow>
+                      ))}
+                    </TableBody>
+                  </Table>
+                  {/* Tableau 2 */}
+                  <Table>
+                    <TableHead>
+                      <TableRow>
+                        {/* colonne2 */}
+                        {titleDayTwo && (
+                          <TableCell
+                            sx={{
+                              border: "1px solid rgba(75, 75, 75, 0.3)",
+                              fontWeight: "bold",
+                              fontFamily: "GlacialIndifference",
+                            }}
+                            align="left"
+                          >
+                            {titleDayTwo}
+                          </TableCell>
+                        )}
+                      </TableRow>
+                    </TableHead>
+                    <TableBody>
+                      {programDayTwo?.map((item, index) => (
+                        <TableRow key={index}>
+                          <TableCell
+                            sx={{
+                              border: "1px solid rgba(75, 75, 75, 0.3)",
+                              fontFamily: "GlacialIndifference",
+                            }}
+                            component="th"
+                            scope="row"
+                          >
+                            {item}
+                          </TableCell>
+                        </TableRow>
+                      ))}
+                    </TableBody>
+                  </Table>
+                </TableContainer>
+              </AccordionDetails>
+            </Accordion>
           )}
 
           {/* CTA */}
