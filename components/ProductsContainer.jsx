@@ -14,7 +14,7 @@ const ProductsContainer = ({ productsData, scrollDiv }) => {
         ref={scrollDiv}>
         <motion.div
           initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1, x: 10 }}
+          whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.7 }}
           className="products-heading"
         >
@@ -25,7 +25,7 @@ const ProductsContainer = ({ productsData, scrollDiv }) => {
           {sortedProducts?.map((product) => (
             <motion.div
               initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1, x: 10 }}
+              whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.7 }}
             >
               <Product key={product._id} product={product} />

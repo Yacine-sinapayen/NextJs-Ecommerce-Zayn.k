@@ -54,6 +54,14 @@ p {
   margin-bottom: 100px;
 }
 
+.mrgt30{
+  margin-top: 30px;
+}
+.mrgt20{
+  margin-top: 20px;
+}
+
+
 /* HEADER -------------------------- */
 .header {
   position: fixed;
@@ -77,10 +85,7 @@ p {
   max-width: 90%;
   margin: auto;
 }
-.navBar-logo {
-  /* background: green; */
-  cursor: pointer;
-}
+
 
 .navBar-logo-content {
   /* background: gray; */
@@ -88,6 +93,7 @@ p {
   justify-content: center;
   flex-direction: column;
   margin: auto;
+  cursor: pointer;
 }
 .navBar-logo-content h1 {
   font-family: var(--font-logo) !important;
@@ -198,7 +204,6 @@ span.text-red {
   color: #324d67;
   width: 310px;
   height: auto;
-  margin: 5px;
   transition: 0.4s ease-out;
   box-shadow: 0px 7px 10px rgba(black, 0.5);
 }
@@ -271,6 +276,9 @@ span.text-red {
   /* background: blue; */
   border-top: 1px solid rgba(75, 75, 75, 0.3);
   padding: 35px 0px;
+  max-width: 90%;
+  margin: auto;
+  margin-bottom: 100px;
 }
 
 .contact-infos-items{
@@ -458,7 +466,7 @@ span.text-red {
   transform: scale(1, 1);
 }
 
-/* Slug products SLUG ---------- */
+/* slug products SLUG ---------- */
 .product-detail-container {
   /* background: red; */
   display: flex;
@@ -511,18 +519,14 @@ span.text-red {
   color: #fff;
 }
 
-.details-container{
-  margin-top: 30px;
-}
-
-.product-detail-desc p {
-  margin-top: 10px;
+.date-container{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
 }
 
 .product-detail-desc .price {
-  /* font-weight: 500; */
   font-size: 26px;
-  margin-top: 30px;
 }
 .price .old-price,
 .product-price .old-price,
@@ -533,7 +537,7 @@ span.text-red {
 .product-detail-desc .quantity {
   display: flex;
   gap: 20px;
-  margin-top: 10px;
+  margin-top: 20px;
   align-items: center;
 }
 .product-detail-desc .buttons {
@@ -676,6 +680,16 @@ span.text-red {
     width: 100%;
   }
 
+  /* NavBar */
+  .navBar-logo-content{
+    width: 50%;
+  }
+
+  /* Product homepage */
+  .product-image{
+    width: 100%;
+  }
+
   /* SLUG RESPONSIVE */
   .products-heading{
     display: flex;
@@ -683,9 +697,6 @@ span.text-red {
   }
   .product-main{
     justify-content: center;
-  }
-  .maylike-products-wrapper{
-    margin-bottom: 300px;
   }
 
   .hero-banner-container button {
@@ -701,6 +712,9 @@ span.text-red {
   .product-detail-container .product-detail-image {
     width: 450px;
     height: 450px;
+  }
+  .product-detail-desc .buttons{
+    justify-content: center;
   }
 
   /* ABOUT ME RESPONSIVE ------------ */
@@ -723,6 +737,9 @@ span.text-red {
   }
 
   /* CONTACT RESPONSIVE -------- */
+  .contact-infos-container{
+    margin-bottom: 300px;
+  }
   .contact-container{
     height: 80vh;
   }
@@ -754,10 +771,6 @@ span.text-red {
   .buttons .buy-now {
     width: 150px;
   }
-  .product-detail-container {
-    margin: 20px;
-  }
-
   .item-desc .flex {
     width: 200px;
   }
